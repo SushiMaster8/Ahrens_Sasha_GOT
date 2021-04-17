@@ -1,0 +1,224 @@
+@charset "UTF-8";
+
+/* ----- custom font ----- */
+@font-face {
+    font-family: 'GOT_font';
+    src: url('Game_of_Thrones.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'heydings_controlsregular';
+    src: url('../fonts/heydings_controls-webfont.woff2') format('woff2'),
+         url('../fonts/heydings_controls-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/* ----- end custom font ----- */
+
+/* ----- default styles ----- */
+body { background-image:url(../images/grungeBG.jpg);
+	background-repeat:no-repeat; background-position:center center;
+	background-color:#000000; font-size:16px; }
+
+h1 {
+	font-family: 'GOT_font';
+	color:white;
+	margin-top:30px;
+	font-size:1.25em;
+}
+
+main {
+	position:relative;
+	width:100%;
+	text-align:center;
+	top:30px;
+}
+
+#imageContainer {
+	width:600px;
+	height:360px;
+	background-color:grey;
+	margin:0 auto;
+	/*overflow:hidden;*/
+}
+
+#houseImages { position:relative; width:5500px; transition: all .5s; }
+#houseImages img { float:left; }
+
+#bottomNav { margin-top:30px; }
+
+#navList li {
+	display:inline;
+	list-style-type:none;
+	padding:0px 10px;
+	cursor:pointer;
+}
+
+/* ----- end default styles ----- */
+
+/* ----- image sprite ----- */
+.sigilContainer {
+	width:51px;
+	height:54px;
+	display:inline-block;
+	overflow:hidden;
+	background-image:url(../images/GOT_sprites.png);
+	background-repeat:no-repeat;
+	transition:transform .3s;
+	-webkit-transition:-webkit-transform .3s;
+	-moz-transition:-moz-transform .3s;
+}
+
+.stark { background-position:0px -54px; }
+.stark:hover { background-position:0px 0px; }
+
+.baratheon { background-position:-50.5px -54px; }
+.baratheon:hover { background-position:-51px 0px; }
+
+.lannister { background-position:-101px -54px; }
+.lannister:hover { background-position:-101px 0px; }
+
+.tully { background-position:-152px -54px; }
+.tully:hover { background-position:-152px 0px; }
+
+.greyjoy { background-position:-202px -54px; }
+.greyjoy:hover { background-position:-202px 0px; }
+
+.arryn { background-position:-253px -54px; }
+.arryn:hover { background-position:-253px 0px; }
+
+.targaryen { background-position:-304px -54px; }
+.targaryen:hover { background-position:-304px 0px; }
+
+.frey { background-position:-355px -54px; }
+.frey:hover { background-position:-355px 0px; }
+
+.tyrell { background-position:-406px -54px; }
+.tyrell:hover { background-position:-406px 0px; }
+/* ----- end image sprite ----- */
+
+/* ----- classes for transitions ----- */
+
+.scaleUp {
+	-moz-transform:scale(1.7, 1.7);
+	-webkit-transform:scale(1.7, 1.7);
+	transform:scale(1.7, 1.7);
+}
+
+.scaleHalfUp {
+	-moz-transform:scale(1.2, 1.2);
+	-webkit-transform:scale(1.2, 1.2);
+	transform:scale(1.2, 1.2);
+}
+
+/* add styles here for lightbox and video */
+.lightbox {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.show-lightbox { display: block; }
+
+.lightbox .close {
+  float: right;
+  padding-right: 10px;
+  padding-top: 10px;
+  font-size: 25px;
+  color: white;
+  text-decoration: none;
+}
+
+.house-info {
+  color: white;
+  font-size: 1.3em;
+  line-height: 1;
+  width: 70%;
+  padding-top: 12px;
+  margin: 0 auto;
+}
+
+video {
+	width: 80%;
+	border: thin solid #949393;
+}
+
+/* Custom Controls */
+.controls
+{
+  visibility: hidden;
+  opacity: 0.5;
+  width: 400px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -200px;
+  background-color: white;
+  box-shadow: 3px 3px 5px rgba(255,255,255,0.3);
+  transition: 1s all;
+  display: flex;
+}
+
+.play{
+  background-color: black;
+}
+
+.rewind{
+  background-color: black;
+}
+
+.muteAudio{
+  background-color: black;
+}
+
+.fullScreen{
+  background-color: black;
+}
+
+.player:hover .controls, player:focus .controls {
+  opacity: 1;
+}
+
+button:before {
+  font-family: 'heydings_controlsregular';
+  font-size: 20px;
+  position: relative;
+  content: attr(data-icon);
+  color: #ffffff;
+  text-shadow: 1px 1px 0px black;
+}
+
+.timer {
+  line-height: 38px;
+  font-size: 10px;
+  color: black;
+  flex: 5;
+  position: relative;
+}
+
+.timer div {
+  position: absolute;
+  background-color: rgba(0,0,0,0.4);
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 38px;
+  z-index: 2;
+}
+
+.timer span {
+  position: absolute;
+  z-index: 3;
+  left: 19px;
+}
