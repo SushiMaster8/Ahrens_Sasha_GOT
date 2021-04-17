@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Game of Thrones</title>
+<link href="css/meyerReset.css" rel="stylesheet" type="text/css" media="screen">
+<link href="css/GOT_master.css" rel="stylesheet" type="text/css" media="screen">
+</head>
+
+<body>
+    <main>
+
+    <section id="imageContainer">
+    	<div id="houseImages"> <!-- add in all of the images to make a scrolling "banner" -->
+    		<img alt="Stark Banner" src="images/stark.jpg"/>
+    		<img alt="Baratheon Banner" src="images/baratheon.jpg"/>
+    		<img alt="Lannister Banner" src="images/lannister.jpg"/>
+    		<img alt="Tully Banner" src="images/tully.jpg"/>
+    		<img alt="GreyJoy Banner" src="images/greyjoy.jpg"/>
+    		<img alt="Arryn Banner" src="images/arryn.jpg"/>
+        <img alt="Targaryen Banner" src="images/targaryen.jpg"/>
+        <img alt="Frey Banner" src="images/frey.jpg"/>
+        <img alt="Tyrell Banner" src="images/tyrell.jpg"/>
+        </div>
+    </section>
+
+    <nav id="bottomNav">
+    	<ul id="navList">
+        	<!-- custom data attribute, allowing to pass custom data https://developer.mozilla.org/en/docs/Web/API/HTMLElement/dataset -->
+            <li><div class="sigilContainer stark" data-offset="0"></div></li>
+            <li><div class="sigilContainer baratheon" data-offset="1"></div></li>
+            <li><div class="sigilContainer lannister" data-offset="2"></div></li>
+            <li><div class="sigilContainer tully" data-offset="3"></div></li>
+            <li><div class="sigilContainer greyjoy" data-offset="4"></div></li>
+            <li><div class="sigilContainer arryn" data-offset="5"></div></li>
+            <li><div class="sigilContainer targaryen" data-offset="6"></div></li>
+            <li><div class="sigilContainer frey" data-offset="7"></div></li>
+            <li><div class="sigilContainer tyrell" data-offset="8"></div></li>
+        </ul>
+    </nav>
+
+    <h1></h1><!-- replace this with the house name -->
+
+    <p class="house-info"></p><!-- replace this with house details (github gist) -->
+
+    <!-- Lightbox goes here -->
+    <section class="lightbox" id="lightbox">
+      <a href="#" class="close">X</a>
+      <div class="player">
+        <video id="myVideo" controls></video>
+        <div class="controls">
+          <button class="play" data-icon="u"></button>
+          <div class="timer">
+            <div></div>
+            <span>00:00</span>
+          </div>
+          <button class="rewind" data-icon="U"></button>
+          <button class="muteAudio" data-icon="Q"></button>
+          <button class="fullScreen" data-icon="b"></button>
+        </div>
+      </div>
+    </section>
+</main>  <!--end mainContainer-->
+
+<script src="js/main.js"></script>
+</body>
+</html>
